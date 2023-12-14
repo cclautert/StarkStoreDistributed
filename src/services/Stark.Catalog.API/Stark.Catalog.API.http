@@ -1,0 +1,6 @@
+@Stark.Catalog.API_HostAddress = http://localhost:5155
+
+GET {{Stark.Catalog.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
