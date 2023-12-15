@@ -19,7 +19,9 @@ namespace Stark.WebApp.MVC.Configuration
             }
             else
             {
+                //Pega errors não tratados
                 app.UseExceptionHandler("/erro/500");
+                //Pega errors tratados
                 app.UseStatusCodePagesWithRedirects("/erro/{0}");
                 app.UseHsts();
             }
@@ -31,6 +33,7 @@ namespace Stark.WebApp.MVC.Configuration
 
             app.UseIdentityConfiguration();
 
+            //Middleware Exception
             app.UseMiddleware<ExceptionMiddleware>();
 
             app.UseEndpoints(endpoints =>
