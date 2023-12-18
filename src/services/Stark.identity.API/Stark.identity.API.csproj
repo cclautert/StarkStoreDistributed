@@ -26,4 +26,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\building blocks\Services\Stark.WebAPI.Core\Stark.WebAPI.Core.csproj" />
+  </ItemGroup>
+
 </Project>

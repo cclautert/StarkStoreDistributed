@@ -1,4 +1,4 @@
-﻿namespace Stark.identity.API.Extensions
+﻿namespace Stark.WebAPI.Core.Identidade
 {
     public class AppSettings
     {

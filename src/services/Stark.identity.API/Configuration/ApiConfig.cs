@@ -1,4 +1,6 @@
-﻿namespace Stark.identity.API.Configuration
+﻿using Stark.WebAPI.Core.Identidade;
+
+namespace Stark.identity.API.Configuration
 {
     public static class ApiConfig
     {
@@ -20,7 +22,7 @@
 
             app.UseRouting();
 
-            app.UseIdentityConfiguration();
+            app.UseAuthConfiguration();
 
             app.UseEndpoints(endpoints =>
             {

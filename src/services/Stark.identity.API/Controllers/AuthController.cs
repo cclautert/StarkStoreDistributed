@@ -2,11 +2,11 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using Stark.identity.API.Extensions;
 using Stark.identity.API.Models;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Stark.WebAPI.Core.Identidade;
 
 namespace Stark.identity.API.Controllers
 {
