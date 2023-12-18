@@ -9,7 +9,6 @@ builder.Configuration.SetBasePath(builder.Environment.ContentRootPath)
     .AddJsonFile($"appsettings.json.{builder.Environment.EnvironmentName}.json", true, true)
     .AddEnvironmentVariables();
 
-
 builder.Services.AddIdentityConfiguration(builder.Configuration);
 
 builder.Services.AddApiConfiguration();

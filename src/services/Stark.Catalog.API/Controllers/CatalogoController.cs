@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Stark.Catalog.API.Models;
+using Stark.WebAPI.Core.Identidade;
 
 namespace Stark.Catalog.API.Controllers
 {
     [ApiController]
-    //[Authorize]
+    [Authorize]
     public class CatalogoController : Controller
     {
         private readonly IProdutoRepository _produtoRepository;
@@ -22,7 +23,7 @@ namespace Stark.Catalog.API.Controllers
             return await _produtoRepository.ObterTodos();
         }
 
-        //[ClaimsAuthorize("Catalogo","Ler")]
+        [ClaimsAuthorize("Catalogo","Ler")]
         [HttpGet("catalogo/produtos/{id}")]
         public async Task<Produto> ProdutoDetalhe(Guid id)
         {

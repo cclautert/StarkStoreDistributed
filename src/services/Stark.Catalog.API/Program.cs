@@ -1,4 +1,6 @@
+using Microsoft.Extensions.Configuration;
 using Stark.Catalog.API.Configuration;
+using Stark.WebAPI.Core.Identidade;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +13,10 @@ builder.Configuration.SetBasePath(builder.Environment.ContentRootPath)
 
 builder.Services.AddApiConfiguration(builder.Configuration);
 
+builder.Services.AddJwtConfiguration(builder.Configuration);
+
 builder.Services.AddSwaggerConfiguration();
+
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
