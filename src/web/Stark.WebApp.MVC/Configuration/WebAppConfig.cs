@@ -1,4 +1,6 @@
-﻿using Stark.WebApp.MVC.Extensions;
+﻿using Microsoft.AspNetCore.Localization;
+using Stark.WebApp.MVC.Extensions;
+using System.Globalization;
 
 namespace Stark.WebApp.MVC.Configuration
 {
@@ -32,6 +34,16 @@ namespace Stark.WebApp.MVC.Configuration
             app.UseRouting();
 
             app.UseIdentityConfiguration();
+
+
+            //Forçar cultura
+            var supportedCultures = new[] { new CultureInfo("pt-BR") };
+            app.UseRequestLocalization(new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture("pt-BR"),
+                SupportedCultures = supportedCultures,
+                SupportedUICultures = supportedCultures
+            });
 
             //Middleware Exception
             app.UseMiddleware<ExceptionMiddleware>();
