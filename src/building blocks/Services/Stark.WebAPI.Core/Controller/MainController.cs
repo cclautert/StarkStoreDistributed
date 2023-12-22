@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using FluentValidation.Results;
 
-namespace Stark.identity.API.Controllers
+namespace Stark.WebAPI.Core.Controller
 {
     [ApiController]
-    public abstract class MainController : Controller
+    public abstract class MainController : Microsoft.AspNetCore.Mvc.Controller
     {
         protected ICollection<string> Erros = new List<string>();
 
@@ -25,6 +26,16 @@ namespace Stark.identity.API.Controllers
         {
             var erros = modelState.Values.SelectMany(e => e.Errors);
             foreach (var erro in erros)
+            {
+                AdicionarErroProcessamento(erro.ErrorMessage);
+            }
+
+            return CustomResponse();
+        }
+
+        protected ActionResult CustomResponse(ValidationResult validationResult)
+        {
+            foreach (var erro in validationResult.Errors)
             {
                 AdicionarErroProcessamento(erro.ErrorMessage);
             }
