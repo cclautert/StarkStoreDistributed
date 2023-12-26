@@ -12,7 +12,7 @@ using Stark.Catalog.API.Data;
 namespace Stark.Catalog.API.Migrations
 {
     [DbContext(typeof(CatalogoContext))]
-    [Migration("20231218131546_Initial")]
+    [Migration("20231226201533_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
