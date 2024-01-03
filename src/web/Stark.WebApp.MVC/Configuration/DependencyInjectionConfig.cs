@@ -1,4 +1,5 @@
-﻿using Polly;
+﻿using Microsoft.AspNetCore.Mvc.DataAnnotations;
+using Polly;
 using Polly.Extensions.Http;
 using Polly.Retry;
 using Stark.WebApp.MVC.Extensions;
@@ -12,6 +13,8 @@ namespace Stark.WebApp.MVC.Configuration
     {
         public static void RegisterServices(this IServiceCollection services, IConfiguration configuration)
         {
+            services.AddSingleton<IValidationAttributeAdapterProvider, CpfValidationAttributeAdapterProvider>();
+
             services.AddTransient<HttpClientAuthorizationDelegatingHandler>();
 
             services.AddHttpClient<IAutenticacaoService, AutenticacaoService>();
