@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\building blocks\Services\Stark.WebAPI.Core\Stark.WebAPI.Core.csproj" />
     <ProjectReference Include="..\..\building blocks\Stark.Core\Stark.Core.csproj" />
   </ItemGroup>
 

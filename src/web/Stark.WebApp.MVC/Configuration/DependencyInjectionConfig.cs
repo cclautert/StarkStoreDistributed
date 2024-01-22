@@ -2,6 +2,7 @@
 using Polly;
 using Polly.Extensions.Http;
 using Polly.Retry;
+using Stark.WebAPI.Core.Usuario;
 using Stark.WebApp.MVC.Extensions;
 using Stark.WebApp.MVC.Service;
 using Stark.WebApp.MVC.Services;
@@ -40,7 +41,7 @@ namespace Stark.WebApp.MVC.Configuration
             #endregion
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddScoped<IUser, AspNetUser>();
+            services.AddScoped<IAspNetUser, AspNetUser>();
         }
 
         public class PollyExtensions
