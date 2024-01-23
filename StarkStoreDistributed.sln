@@ -49,7 +49,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stark.WebAPI.Core", "src\bu
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MessageBus", "MessageBus", "{38E15FA5-73AD-46CA-A5D7-F7EABB35C99F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stark.MessageBus", "src\building blocks\MessageBus\Stark.MessageBus\Stark.MessageBus.csproj", "{5A3D153B-322B-4F2F-88AC-C2E97AFC0B01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stark.MessageBus", "src\building blocks\MessageBus\Stark.MessageBus\Stark.MessageBus.csproj", "{5A3D153B-322B-4F2F-88AC-C2E97AFC0B01}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api Gateways", "Api Gateways", "{87D95559-0CC9-4905-83BB-7E1819A33EAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Startk.Bff.Compras", "src\Api Gateways\Startk.Bff.Compras\Startk.Bff.Compras.csproj", "{93BB7B5D-00D8-4764-BC81-28167DCD63BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,6 +101,10 @@ Global
 		{5A3D153B-322B-4F2F-88AC-C2E97AFC0B01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A3D153B-322B-4F2F-88AC-C2E97AFC0B01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A3D153B-322B-4F2F-88AC-C2E97AFC0B01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93BB7B5D-00D8-4764-BC81-28167DCD63BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93BB7B5D-00D8-4764-BC81-28167DCD63BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93BB7B5D-00D8-4764-BC81-28167DCD63BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93BB7B5D-00D8-4764-BC81-28167DCD63BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -125,6 +133,8 @@ Global
 		{3AB9C09E-C227-44F9-81D6-52A6F49A7BE9} = {970BCA76-08A1-46DE-8082-D878788ACED4}
 		{38E15FA5-73AD-46CA-A5D7-F7EABB35C99F} = {4084F1C0-15F0-4363-8780-E860CF600BA8}
 		{5A3D153B-322B-4F2F-88AC-C2E97AFC0B01} = {38E15FA5-73AD-46CA-A5D7-F7EABB35C99F}
+		{87D95559-0CC9-4905-83BB-7E1819A33EAB} = {622C0510-F070-4926-AF68-56D743E984A3}
+		{93BB7B5D-00D8-4764-BC81-28167DCD63BA} = {87D95559-0CC9-4905-83BB-7E1819A33EAB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1358060E-72C3-4E6F-9B99-50297763FF86}

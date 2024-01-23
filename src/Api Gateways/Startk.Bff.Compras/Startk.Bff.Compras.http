@@ -1,0 +1,6 @@
+@Startk.Bff.Compras_HostAddress = http://localhost:5255
+
+GET {{Startk.Bff.Compras_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

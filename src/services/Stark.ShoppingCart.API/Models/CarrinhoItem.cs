@@ -15,9 +15,9 @@ namespace Stark.ShoppingCart.API.Models
         public string Nome { get; set; }
         public int Quantidade { get; set; }
         public decimal Valor { get; set; }
-        public string Imagem { get; set; }
 
         public Guid CarrinhoId { get; set; }
+        public string Imagem { get; set; }
 
         [JsonIgnore]
         public CarrinhoCliente CarrinhoCliente { get; set; }

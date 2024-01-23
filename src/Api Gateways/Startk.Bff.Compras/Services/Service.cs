@@ -1,9 +1,8 @@
-﻿using System.Text.Json;
+﻿using System.Net;
+using System.Text.Json;
 using System.Text;
-using Stark.WebApp.MVC.Extensions;
-using Stark.WebApp.MVC.Models;
 
-namespace Stark.WebApp.MVC.Services
+namespace Startk.Bff.Compras.Services
 {
     public abstract class Service
     {
@@ -22,30 +21,15 @@ namespace Stark.WebApp.MVC.Services
                 PropertyNameCaseInsensitive = true
             };
 
-            return JsonSerializer.Deserialize<T>(await responseMessage.Content.ReadAsStringAsync(), options)!;
+            return JsonSerializer.Deserialize<T>(await responseMessage.Content.ReadAsStringAsync(), options);
         }
 
         protected bool TratarErrosResponse(HttpResponseMessage response)
         {
-            switch ((int)response.StatusCode)
-            {
-                case 401:
-                case 403:
-                case 404:
-                case 500:
-                    throw new CustomHttpRequestException(response.StatusCode);
-
-                case 400:
-                    return false;
-            }
+            if (response.StatusCode == HttpStatusCode.BadRequest) return false;
 
             response.EnsureSuccessStatusCode();
             return true;
-        }
-
-        protected ResponseResult RetornoOk()
-        {
-            return new ResponseResult();
         }
     }
 }
