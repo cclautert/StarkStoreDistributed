@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Stark.Core.Communication;
 using Stark.WebApp.MVC.Models;
 
 namespace Stark.WebApp.MVC.Controllers
 {
     public class MainController : Controller
     {
-        protected bool ResponsePossuiErros(ResponseResult? resposta)
+        protected bool ResponsePossuiErros(ResponseResult resposta)
         {
             if (resposta != null && resposta.Errors.Mensagens.Any())
             {

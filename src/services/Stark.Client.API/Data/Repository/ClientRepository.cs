@@ -20,7 +20,7 @@ namespace Stark.Client.API.Data.Repository
             return await _context.Clientes.AsNoTracking().ToListAsync();
         }
 
-        public Task<Cliente?> ObterPorCpf(string cpf)
+        public Task<Cliente> ObterPorCpf(string cpf)
         {
             return _context.Clientes.FirstOrDefaultAsync(c => c.Cpf.Numero == cpf);
         }
@@ -28,6 +28,16 @@ namespace Stark.Client.API.Data.Repository
         public void Adicionar(Cliente cliente)
         {
             _context.Clientes.Add(cliente);
+        }
+
+        public async Task<Endereco> ObterEnderecoPorId(Guid id)
+        {
+            return await _context.Enderecos.FirstOrDefaultAsync(e => e.ClienteId == id);
+        }
+
+        public void AdicionarEndereco(Endereco endereco)
+        {
+            _context.Enderecos.Add(endereco);
         }
 
         public void Dispose()

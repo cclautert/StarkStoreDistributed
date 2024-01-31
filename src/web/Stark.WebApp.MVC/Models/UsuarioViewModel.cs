@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using Stark.Core.Communication;
 using Stark.WebApp.MVC.Extensions;
 
 namespace Stark.WebApp.MVC.Models

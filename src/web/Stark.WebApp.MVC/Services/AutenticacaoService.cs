@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Options;
+using Stark.Core.Communication;
 using Stark.WebApp.MVC.Extensions;
 using Stark.WebApp.MVC.Models;
 
@@ -21,7 +22,6 @@ namespace Stark.WebApp.MVC.Services
             var loginContent = ObterConteudo(usuarioLogin);
 
             var response = await _httpClient.PostAsync("/api/identidade/autenticar", loginContent);
-            
 
             if (!TratarErrosResponse(response))
             {

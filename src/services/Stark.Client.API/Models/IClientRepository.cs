@@ -7,9 +7,9 @@ namespace Stark.Client.API.Models
         void Adicionar(Cliente cliente);
 
         Task<IEnumerable<Cliente>> ObterTodos();
-        Task<Cliente?> ObterPorCpf(string cpf);
+        Task<Cliente> ObterPorCpf(string cpf);
 
-        //void AdicionarEndereco(Endereco endereco);
-        //Task<Endereco> ObterEnderecoPorId(Guid id);
+        void AdicionarEndereco(Endereco endereco);
+        Task<Endereco> ObterEnderecoPorId(Guid id);
     }
 }

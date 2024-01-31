@@ -1,6 +1,7 @@
 ﻿using System.Net;
 using System.Text.Json;
 using System.Text;
+using Stark.Core.Communication;
 
 namespace Startk.Bff.Compras.Services
 {
@@ -30,6 +31,11 @@ namespace Startk.Bff.Compras.Services
 
             response.EnsureSuccessStatusCode();
             return true;
+        }
+
+        protected ResponseResult RetornoOk()
+        {
+            return new ResponseResult();
         }
     }
 }
