@@ -12,8 +12,8 @@ using Stark.Client.API.Data;
 namespace Stark.Client.API.Migrations
 {
     [DbContext(typeof(ClientesContext))]
-    [Migration("20231222182122_Initial")]
-    partial class Initial
+    [Migration("20240205204913_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

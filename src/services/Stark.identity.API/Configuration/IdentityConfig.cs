@@ -1,10 +1,7 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
 using Stark.identity.API.Data;
 using Stark.identity.API.Extensions;
-using System.Text;
 using Stark.WebAPI.Core.Identidade;
 
 namespace Stark.identity.API.Configuration

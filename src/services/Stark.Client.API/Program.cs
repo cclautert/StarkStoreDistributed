@@ -1,5 +1,6 @@
 using Stark.Client.API.Configuration;
 using System.Reflection;
+using Stark.WebAPI.Core.Identidade;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +12,7 @@ builder.Configuration.SetBasePath(builder.Environment.ContentRootPath)
     .AddEnvironmentVariables();
 
 builder.Services.AddApiConfiguration(builder.Configuration);
-
+builder.Services.AddJwtConfiguration(builder.Configuration);
 builder.Services.AddSwaggerConfiguration();
 
 //builder.Services.AddMediatR();
