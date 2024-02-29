@@ -1,5 +1,4 @@
-﻿
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Stark.WebApp.MVC.Services;
 
 namespace Stark.WebApp.MVC.Extensions

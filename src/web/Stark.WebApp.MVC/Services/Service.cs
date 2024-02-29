@@ -2,7 +2,6 @@
 using System.Text;
 using Stark.Core.Communication;
 using Stark.WebApp.MVC.Extensions;
-using Stark.WebApp.MVC.Models;
 
 namespace Stark.WebApp.MVC.Services
 {
@@ -23,7 +22,7 @@ namespace Stark.WebApp.MVC.Services
                 PropertyNameCaseInsensitive = true
             };
 
-            return JsonSerializer.Deserialize<T>(await responseMessage.Content.ReadAsStringAsync(), options)!;
+            return JsonSerializer.Deserialize<T>(await responseMessage.Content.ReadAsStringAsync(), options);
         }
 
         protected bool TratarErrosResponse(HttpResponseMessage response)

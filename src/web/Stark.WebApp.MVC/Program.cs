@@ -8,6 +8,10 @@ builder.Configuration.SetBasePath(builder.Environment.ContentRootPath)
     .AddJsonFile($"appsettings.json.{builder.Environment.EnvironmentName}.json", true, true)
     .AddEnvironmentVariables();
 
+if (builder.Environment.IsDevelopment())
+{
+    //builder.Services.AddUserSecrets<Startup>();
+}
 
 builder.Services.AddIdentityConfiguration();
 

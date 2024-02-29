@@ -1,7 +1,13 @@
-﻿using Microsoft.Extensions.Options;
+﻿using System.Net.Http.Headers;
+using System.Text;
+using Microsoft.Extensions.Options;
 using Stark.Core.Communication;
 using Stark.WebApp.MVC.Extensions;
 using Stark.WebApp.MVC.Models;
+using System.Text.Json;
+using Microsoft.CodeAnalysis;
+using Newtonsoft.Json.Linq;
+using System.Net.Http.Json;
 
 namespace Stark.WebApp.MVC.Services
 {
@@ -37,7 +43,53 @@ namespace Stark.WebApp.MVC.Services
         {
             var itemContent = ObterConteudo(carrinho);
 
-            var response = await _httpClient.PostAsync("/compras/carrinho/items/", itemContent);
+            //_httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            string json = JsonSerializer.Serialize(carrinho);
+            //StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+            //var response = await _httpClient.PostAsync("/compras/carrinho/items/", data);
+
+            //var response = await _httpClient.PostAsJsonAsync("/compras/carrinho/items/", content, JsonSerializerOptions.Default);
+
+
+            //var content = JsonContent.Create(carrinho);
+            //var bytesContent = new ByteArrayContent(content.ToBytes());
+            //bytesContent.Headers.Add("Content-Type", "application/json; charset=utf-8"); 
+            //var response = await _httpClient.PostAsJsonAsync("/compras/carrinho/items/", bytesContent);
+
+
+
+            //var content = new MultipartFormDataContent();
+            //var file_content = new ByteArrayContent(new StringContent(json).ReadAsByteArrayAsync().Result);
+            //file_content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            //file_content.Headers.ContentLength = json.Length;
+            //content.Add(file_content);
+            //var response = await _httpClient.PostAsJsonAsync("/compras/carrinho/items/", content);
+
+
+            var content = new MultipartFormDataContent();
+            ByteArrayContent fileContent = new ByteArrayContent(new StringContent(json).ReadAsByteArrayAsync().Result);
+            fileContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            fileContent.Headers.ContentLength = json.Length;
+            content.Add(fileContent);
+            var response = await _httpClient.PostAsync("/compras/carrinho/items/", content);
+
+            //var byteArrayContent = new ByteArrayContent(Encoding.UTF8.GetBytes("{\"ProdutoId\":\"7d67df76-2d4e-4a47-a19c-08eb80a9060b\",\"Nome\":null,\"Quantidade\":1,\"Valor\":0,\"Imagem\":null}"));
+            //byteArrayContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            //content.Add(byteArrayContent);
+            //var response = await _httpClient.PostAsJsonAsync("/compras/carrinho/items/", content);
+
+
+            //var content = JsonContent.Create(json);
+            //var content = new HttpResponseMessage
+            //{
+            //    Content = new StringContent(json)
+            //};
+            //content.Content.Headers.Add(@"Content-Length", json.Length.ToString());
+            //content.Content.Headers.Add("Content-Type", "json");
+            //content.Content.Headers.Add("Host", "/compras/carrinho/items");
+            //var response = await _httpClient.PostAsJsonAsync("/compras/carrinho/items/", content);
+
 
             if (!TratarErrosResponse(response)) return await DeserializarObjetoResponse<ResponseResult>(response);
 

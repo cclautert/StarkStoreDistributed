@@ -61,10 +61,10 @@
                         </div>
                     </article>
 
-                    <partial name="_ResumoFinanceiro" model="Model"/>
+                    <partial name="_ResumoFinanceiro" model="Model" />
 
                     <div class="card-body border-top">
-                        <partial name="_Endereco" model="Model"/>
+                        <partial name="_Endereco" model="Model" />
                     </div>
                     <div class="card-body border-top">
                         @{
@@ -88,12 +88,14 @@
 
 @section Scripts {
 
-@{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 
     <script>
-       $(document).ready(function() {
-          BuscaCep();
-       });
+        $(document).ready(function () {
+            BuscaCep();
+        });
     </script>
 
 }

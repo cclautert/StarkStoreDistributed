@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <InvariantGlobalization>false</InvariantGlobalization>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.28" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\building blocks\MessageBus\Stark.MessageBus\Stark.MessageBus.csproj" />
+    <ProjectReference Include="..\..\..\building blocks\Services\Stark.WebAPI.Core\Stark.WebAPI.Core.csproj" />
+    <ProjectReference Include="..\..\..\building blocks\Stark.Core\Stark.Core.csproj" />
+    <ProjectReference Include="..\Stark.Pedidos.Domain\Stark.Pedidos.Domain.csproj" />
+    <ProjectReference Include="..\Stark.Pedidos.Infra\Stark.Pedidos.Infra.csproj" />
+  </ItemGroup>
+
+</Project>
