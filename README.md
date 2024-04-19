@@ -1,1 +1,1 @@
-![image](https://github.com/cclautert/StarkStoreDistributed/assets/14001285/1aae07b2-e395-4586-bb85-9c705aef89a2)
+![image](https://github.com/cclautert/StarkStoreDistributed/assets/14001285/151cfa63-72ea-4dee-b567-d34d8414f342)
